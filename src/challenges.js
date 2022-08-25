@@ -1,17 +1,21 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
-  //mudança apenas para conseguir fazer a pr.
+function compareTrue(booleanOne, booleanTwo) {
+  if(booleanOne === true && booleanTwo === true) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  return (base * height) / 2;
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(string) {
+  let wordsSentente = string.split(' ');
+  return wordsSentente;
 }
 
 // Desafio 4
