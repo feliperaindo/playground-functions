@@ -83,11 +83,50 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  
+function encode(string) {
+  let encoder = [
+    {number:'a', crypto: 1,},
+    {number:'e', crypto: 2,},
+    {number:'i', crypto: 3,},
+    {number:'o', crypto: 4,},
+    {number:'u', crypto: 5,},
+  ]
+  let phraseEncoded = '';
+  let arrayEncoded = []
+
+    for (const i in string) {
+      arrayEncoded.push(string[i]);
+      for (let ii in encoder) {
+        if (string[i] === encoder[ii].number) {
+          arrayEncoded[i] = encoder[ii].crypto;
+        }
+      }
+      phraseEncoded += arrayEncoded[i]
+    }
+    return phraseEncoded;
 }
-function decode() {
-  // seu código aqui
+
+function decode(string) {
+    let decoder = [
+      {number:'a', crypto: 1,},
+      {number:'e', crypto: 2,},
+      {number:'i', crypto: 3,},
+      {number:'o', crypto: 4,},
+      {number:'u', crypto: 5,},
+    ]
+    let phraseDecoded = "";
+    let arrayDecoded = []
+  
+      for (const i in string) {
+        arrayDecoded.push(string[i]);
+        for (let ii in decoder) {
+          if (string[i] == decoder[ii].crypto) {
+            arrayDecoded[i] = decoder[ii].number;
+          }
+        }
+        phraseDecoded += arrayDecoded[i]
+      }
+      return phraseDecoded;
 }
 
 // Desafio 10
