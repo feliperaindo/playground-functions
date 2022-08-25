@@ -62,13 +62,29 @@ function catAndMouse(mouse, catOne, catTwo) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  
+function fizzBuzz(array) {
+  let result = [];
+
+  for (let i of array) {
+    switch (true) {
+      case (i % 3 === 0) && (i % 5 === 0):
+        result.push('fizzBuzz');
+        break;
+      case (i % 3 === 0):
+        result.push('fizz');
+        break;
+      case (i % 5 === 0):
+        result.push('buzz');
+        break;
+      default: result.push('bug!')
+    }
+  }
+  return result;
 }
 
 // Desafio 9
 function encode() {
-  // seu código aqui
+  
 }
 function decode() {
   // seu código aqui
