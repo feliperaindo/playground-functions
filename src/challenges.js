@@ -25,23 +25,45 @@ function concatName(array) {
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  return (wins * 3) + (ties);
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(array) {
+  let biggerNumber = 0;
+  let repeat = 0;
+
+  for (let i of array) {
+    if (i > biggerNumber) {
+      biggerNumber = i;
+    }
+  }
+  for (let ii of array) {
+    if (ii === biggerNumber) {
+      repeat += 1;
+    }
+  }
+  return repeat;
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, catOne, catTwo) {
+  let distanceCatOne = mouse - catOne;
+  let distanceCarTwo = mouse - catTwo;
+
+    if (Math.abs(distanceCarTwo) > Math.abs(distanceCatOne)) {
+      return 'cat1';
+    } else if (Math.abs(distanceCarTwo) < Math.abs(distanceCatOne)) {
+      return 'cat2';
+    } else {
+      return 'os gatos trombam e o rato foge';
+    }
 }
 
 // Desafio 8
 function fizzBuzz() {
-  // seu código aqui
+  
 }
 
 // Desafio 9
