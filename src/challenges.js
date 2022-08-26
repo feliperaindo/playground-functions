@@ -130,8 +130,23 @@ function decode(string) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, string) {
+  let result = []
+
+  if (array.length > 0) {
+    for (const key in array) {
+      result.push({tech: array[key], 
+        name: string,});  
+    }
+  } else {
+    return 'Vazio!';
+  }
+
+  if (result.length === 5) {
+    return result.sort; 
+  } else {
+    return result;
+  }
 }
 
 module.exports = {
