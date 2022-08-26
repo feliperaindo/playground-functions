@@ -103,11 +103,8 @@ console.log(fizzBuzz([2, 15, 7, 9, 45]));
 // Desafio 9
 function encode(string) {
   let encoder = [
-    { number: 'a', crypto: 1 },
-    { number: 'e', crypto: 2 },
-    { number: 'i', crypto: 3 },
-    { number: 'o', crypto: 4 },
-    { number: 'u', crypto: 5 },
+    { number: 'a', crypto: 1 }, { number: 'e', crypto: 2 }, { number: 'i', crypto: 3 },
+    { number: 'o', crypto: 4 }, { number: 'u', crypto: 5 },
   ];
   let phraseEncoded = '';
   let arrayEncoded = [];
@@ -126,11 +123,8 @@ function encode(string) {
 
 function decode(string) {
   let decoder = [
-    { number: 'a', crypto: 1 },
-    { number: 'e', crypto: 2 },
-    { number: 'i', crypto: 3 },
-    { number: 'o', crypto: 4 },
-    { number: 'u', crypto: 5 },
+    { number: 'a', crypto: 1 }, { number: 'e', crypto: 2 }, { number: 'i', crypto: 3 },
+    { number: 'o', crypto: 4 }, { number: 'u', crypto: 5 },
   ];
   let phraseDecoded = '';
   let arrayDecoded = [];
