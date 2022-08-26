@@ -1,10 +1,9 @@
 // Desafio 1
 function compareTrue(booleanOne, booleanTwo) {
-  if(booleanOne === true && booleanTwo === true) {
+  if (booleanOne === true && booleanTwo === true) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Desafio 2
@@ -20,7 +19,7 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  let lastAndFirst = array[array.length-1] + ", " + array[0];
+  let lastAndFirst = array[array.length - 1] + ", " + array[0];
   return lastAndFirst;
 }
 
@@ -54,13 +53,13 @@ function catAndMouse(mouse, catOne, catTwo) {
   let distanceCatOne = mouse - catOne;
   let distanceCarTwo = mouse - catTwo;
 
-    if (Math.abs(distanceCarTwo) > Math.abs(distanceCatOne)) {
-      return 'cat1';
-    } else if (Math.abs(distanceCarTwo) < Math.abs(distanceCatOne)) {
-      return 'cat2';
-    } else {
-      return 'os gatos trombam e o rato foge';
-    }
+  if (Math.abs(distanceCarTwo) > Math.abs(distanceCatOne)) {
+    return 'cat1';
+  } else if (Math.abs(distanceCarTwo) < Math.abs(distanceCatOne)) {
+    return 'cat2';
+  } else {
+    return 'os gatos trombam e o rato foge';
+  }
 }
 
 // Desafio 8
@@ -87,48 +86,48 @@ function fizzBuzz(array) {
 // Desafio 9
 function encode(string) {
   let encoder = [
-    {number:'a', crypto: 1,},
-    {number:'e', crypto: 2,},
-    {number:'i', crypto: 3,},
-    {number:'o', crypto: 4,},
-    {number:'u', crypto: 5,},
+    { number: 'a', crypto: 1, },
+    { number: 'e', crypto: 2, },
+    { number: 'i', crypto: 3, },
+    { number: 'o', crypto: 4, },
+    { number: 'u', crypto: 5, },
   ]
   let phraseEncoded = '';
   let arrayEncoded = []
 
-    for (const i in string) {
-      arrayEncoded.push(string[i]);
-      for (let ii in encoder) {
-        if (string[i] === encoder[ii].number) {
-          arrayEncoded[i] = encoder[ii].crypto;
-        }
+  for (const i in string) {
+    arrayEncoded.push(string[i]);
+    for (let ii in encoder) {
+      if (string[i] === encoder[ii].number) {
+        arrayEncoded[i] = encoder[ii].crypto;
       }
-      phraseEncoded += arrayEncoded[i]
     }
-    return phraseEncoded;
+    phraseEncoded += arrayEncoded[i]
+  }
+  return phraseEncoded;
 }
 
 function decode(string) {
-    let decoder = [
-      {number:'a', crypto: 1,},
-      {number:'e', crypto: 2,},
-      {number:'i', crypto: 3,},
-      {number:'o', crypto: 4,},
-      {number:'u', crypto: 5,},
-    ]
-    let phraseDecoded = "";
-    let arrayDecoded = []
-  
-      for (const i in string) {
-        arrayDecoded.push(string[i]);
-        for (let ii in decoder) {
-          if (string[i] == decoder[ii].crypto) {
-            arrayDecoded[i] = decoder[ii].number;
-          }
-        }
-        phraseDecoded += arrayDecoded[i]
+  let decoder = [
+    { number: 'a', crypto: 1, },
+    { number: 'e', crypto: 2, },
+    { number: 'i', crypto: 3, },
+    { number: 'o', crypto: 4, },
+    { number: 'u', crypto: 5, },
+  ]
+  let phraseDecoded = "";
+  let arrayDecoded = []
+
+  for (const i in string) {
+    arrayDecoded.push(string[i]);
+    for (let ii in decoder) {
+      if (string[i] == decoder[ii].crypto) {
+        arrayDecoded[i] = decoder[ii].number;
       }
-      return phraseDecoded;
+    }
+    phraseDecoded += arrayDecoded[i]
+  }
+  return phraseDecoded;
 }
 
 // Desafio 10 (não passou)
