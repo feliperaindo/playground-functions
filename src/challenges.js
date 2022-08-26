@@ -29,7 +29,7 @@ function footballPoints(wins, ties) {
   return (wins * 3) + (ties);
 }
 
-// Desafio 6 (não passou)
+// Desafio 6
 function highestCount(array) {
   let biggerNumber;
   let repeat = 0;
@@ -135,20 +135,20 @@ function decode(string) {
 function techList(array, string) {
   let result = [];
 
+  if (array.length === 5) {
+    array.sort();
+  }
   if (array.length > 0) {
     for (const key in array) {
-      result.push({tech: array[key], 
-        name: string,});  
+      result.push({
+        tech: array[key],
+        name: string,
+      });
     }
   } else {
     return 'Vazio!';
   }
-
-  if (result.length === 5) {
-    return result.sort; 
-  } else {
-    return result;
-  }
+  return result;
 }
 
 module.exports = {
