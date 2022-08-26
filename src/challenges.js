@@ -19,7 +19,7 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  let lastAndFirst = array[array.length - 1] + ", " + array[0];
+  let lastAndFirst = `${array[array.length - 1]}, ${array[0]}`;
   return lastAndFirst;
 }
 
@@ -32,7 +32,6 @@ function footballPoints(wins, ties) {
 function highestCount(array) {
   let biggerNumber;
   let repeat = 0;
-
   for (let i of array) {
     if (biggerNumber === undefined) {
       biggerNumber = i;
@@ -55,11 +54,10 @@ function catAndMouse(mouse, catOne, catTwo) {
 
   if (Math.abs(distanceCarTwo) > Math.abs(distanceCatOne)) {
     return 'cat1';
-  } else if (Math.abs(distanceCarTwo) < Math.abs(distanceCatOne)) {
+  } if (Math.abs(distanceCarTwo) < Math.abs(distanceCatOne)) {
     return 'cat2';
-  } else {
-    return 'os gatos trombam e o rato foge';
   }
+  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
@@ -68,16 +66,16 @@ function fizzBuzz(array) {
 
   for (let i of array) {
     switch (true) {
-      case (i % 3 === 0) && (i % 5 === 0):
-        result.push('fizzBuzz');
-        break;
-      case (i % 3 === 0):
-        result.push('fizz');
-        break;
-      case (i % 5 === 0):
-        result.push('buzz');
-        break;
-      default: result.push('bug!')
+    case (i % 3 === 0) && (i % 5 === 0):
+      result.push('fizzBuzz');
+      break;
+    case (i % 3 === 0):
+      result.push('fizz');
+      break;
+    case (i % 5 === 0):
+      result.push('buzz');
+      break;
+    default: result.push('bug!');
     }
   }
   return result;
@@ -86,14 +84,14 @@ function fizzBuzz(array) {
 // Desafio 9
 function encode(string) {
   let encoder = [
-    { number: 'a', crypto: 1, },
-    { number: 'e', crypto: 2, },
-    { number: 'i', crypto: 3, },
-    { number: 'o', crypto: 4, },
-    { number: 'u', crypto: 5, },
-  ]
+    { number: 'a', crypto: 1 },
+    { number: 'e', crypto: 2 },
+    { number: 'i', crypto: 3 },
+    { number: 'o', crypto: 4 },
+    { number: 'u', crypto: 5 },
+  ];
   let phraseEncoded = '';
-  let arrayEncoded = []
+  let arrayEncoded = [];
 
   for (const i in string) {
     arrayEncoded.push(string[i]);
@@ -102,21 +100,21 @@ function encode(string) {
         arrayEncoded[i] = encoder[ii].crypto;
       }
     }
-    phraseEncoded += arrayEncoded[i]
+    phraseEncoded += arrayEncoded[i];
   }
   return phraseEncoded;
 }
 
 function decode(string) {
   let decoder = [
-    { number: 'a', crypto: 1, },
-    { number: 'e', crypto: 2, },
-    { number: 'i', crypto: 3, },
-    { number: 'o', crypto: 4, },
-    { number: 'u', crypto: 5, },
-  ]
-  let phraseDecoded = "";
-  let arrayDecoded = []
+    { number: 'a', crypto: 1 },
+    { number: 'e', crypto: 2 },
+    { number: 'i', crypto: 3 },
+    { number: 'o', crypto: 4 },
+    { number: 'u', crypto: 5 },
+  ];
+  let phraseDecoded = '';
+  let arrayDecoded = [];
 
   for (const i in string) {
     arrayDecoded.push(string[i]);
@@ -125,7 +123,7 @@ function decode(string) {
         arrayDecoded[i] = decoder[ii].number;
       }
     }
-    phraseDecoded += arrayDecoded[i]
+    phraseDecoded += arrayDecoded[i];
   }
   return phraseDecoded;
 }
