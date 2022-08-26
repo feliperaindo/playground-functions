@@ -29,15 +29,20 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(array) {
+function getBigNumber(array) {
   let biggerNumber = array[0];
-  let repeat = 0;
 
   for (let i of array) {
     if (i > biggerNumber) {
       biggerNumber = i;
     }
   }
+  return biggerNumber;
+}
+function highestCount(array) {
+  let biggerNumber = getBigNumber(array);
+  let repeat = 0;
+
   for (let ii of array) {
     if (ii === biggerNumber) {
       repeat += 1;
@@ -45,7 +50,6 @@ function highestCount(array) {
   }
   return repeat;
 }
-
 // Desafio 7
 function catAndMouse(mouse, catOne, catTwo) {
   let distanceCatOne = mouse - catOne;
@@ -60,25 +64,41 @@ function catAndMouse(mouse, catOne, catTwo) {
 }
 
 // Desafio 8
+function divisorThree(number) {
+  if (number % 3 === 0) {
+    return true;
+  }
+  return false;
+}
+function divisorFive(number) {
+  if (number % 5 === 0) {
+    return true;
+  }
+  return false;
+}
+function wichTrue(string) {
+  if (string === true) {
+    return 'fizz';
+  } return 'buzz';
+}
+function concatThreeAndFive(string, stringTwo) {
+  if (string === true && stringTwo === true) {
+    return 'fizzBuzz';
+  } if (string === false && stringTwo === false) {
+    return 'bug!';
+  } return wichTrue(string);
+}
 function fizzBuzz(array) {
   let result = [];
 
-  for (let i of array) {
-    switch (true) {
-    case (i % 3 === 0) && (i % 5 === 0):
-      result.push('fizzBuzz');
-      break;
-    case (i % 3 === 0):
-      result.push('fizz');
-      break;
-    case (i % 5 === 0):
-      result.push('buzz');
-      break;
-    default: result.push('bug!');
-    }
+  for (const i of array) {
+    let verify = divisorThree(i);
+    let verifyTwo = divisorFive(i);
+    result.push(concatThreeAndFive(verify, verifyTwo));
   }
   return result;
 }
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
