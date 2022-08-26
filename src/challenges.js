@@ -29,13 +29,15 @@ function footballPoints(wins, ties) {
   return (wins * 3) + (ties);
 }
 
-// Desafio 6
+// Desafio 6 (não passou)
 function highestCount(array) {
-  let biggerNumber = 0;
+  let biggerNumber;
   let repeat = 0;
 
   for (let i of array) {
-    if (i > biggerNumber) {
+    if (biggerNumber === undefined) {
+      biggerNumber = i;
+    } else if (i > biggerNumber) {
       biggerNumber = i;
     }
   }
@@ -129,9 +131,9 @@ function decode(string) {
       return phraseDecoded;
 }
 
-// Desafio 10
+// Desafio 10 (não passou)
 function techList(array, string) {
-  let result = []
+  let result = [];
 
   if (array.length > 0) {
     for (const key in array) {
