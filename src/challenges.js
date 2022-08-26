@@ -127,7 +127,7 @@ function decode(string) {
   return phraseDecoded;
 }
 
-// Desafio 10 (não passou)
+// Desafio 10
 function techList(array, string) {
   let result = [];
 
