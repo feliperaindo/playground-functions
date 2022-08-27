@@ -111,8 +111,8 @@ function arrayCreator(string) {
 
 function encoder(string) {
   let codifier = [
-    { number: 'a', crypto: 1 }, { number: 'e', crypto: 2 }, { number: 'i', crypto: 3 },
-    { number: 'o', crypto: 4 }, { number: 'u', crypto: 5 },
+    { number: 'a', crypto: '1' }, { number: 'e', crypto: '2' }, { number: 'i', crypto: '3' },
+    { number: 'o', crypto: '4' }, { number: 'u', crypto: '5' },
   ];
 
   for (let key of codifier) {
@@ -143,27 +143,38 @@ function encode(string) {
   }
   return phraseEncoded;
 }
-console.log(encode('vamos nessa'));
-
-function decode(string) {
-  let decoder = [
-    { number: 'a', crypto: 1 }, { number: 'e', crypto: 2 }, { number: 'i', crypto: 3 },
-    { number: 'o', crypto: 4 }, { number: 'u', crypto: 5 },
+function decoder(string) {
+  let codifier = [
+    { number: 'a', crypto: '1' }, { number: 'e', crypto: '2' }, { number: 'i', crypto: '3' },
+    { number: 'o', crypto: '4' }, { number: 'u', crypto: '5' },
   ];
-  let phraseDecoded = '';
-  let arrayDecoded = [];
 
-  for (const i in string) {
-    arrayDecoded.push(string[i]);
-    for (let ii in decoder) {
-      if (string[i] == decoder[ii].crypto) {
-        arrayDecoded[i] = decoder[ii].number;
-      }
+  for (let key of codifier) {
+    if (string === key.crypto) {
+      string = key.number;
+      return string;
     }
-    phraseDecoded += arrayDecoded[i];
+  }
+  return string;
+}
+function arrayDecoder(array) {
+  let arrayEncoded = [];
+
+  for (let i of array) {
+    arrayEncoded.push(decoder(i));
+  }
+  return arrayEncoded;
+}
+function decode(string) {
+  let array = arrayCreator(string);
+  let arrayDecoded = arrayDecoder(array);
+  let phraseDecoded = '';
+  for (let i of arrayDecoded) {
+    phraseDecoded += i;
   }
   return phraseDecoded;
 }
+console.log(decode('v1m4 t2st1r'));
 
 // Desafio 10
 function techList(array, string) {
