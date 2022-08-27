@@ -184,9 +184,9 @@ function techList(array, string) {
     array.sort();
   }
   if (array.length > 0) {
-    for (const key in array) {
+    for (const key of array) {
       result.push({
-        tech: array[key],
+        tech: key,
         name: string,
       });
     }
