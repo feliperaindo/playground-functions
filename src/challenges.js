@@ -39,6 +39,7 @@ function getBigNumber(array) {
   }
   return biggerNumber;
 }
+
 function highestCount(array) {
   let biggerNumber = getBigNumber(array);
   let repeat = 0;
@@ -50,6 +51,7 @@ function highestCount(array) {
   }
   return repeat;
 }
+
 // Desafio 7
 function catAndMouse(mouse, catOne, catTwo) {
   let distanceCatOne = mouse - catOne;
@@ -70,17 +72,20 @@ function divisorThree(number) {
   }
   return false;
 }
+
 function divisorFive(number) {
   if (number % 5 === 0) {
     return true;
   }
   return false;
 }
+
 function wichTrue(string) {
   if (string === true) {
     return 'fizz';
   } return 'buzz';
 }
+
 function concatThreeAndFive(string, stringTwo) {
   if (string === true && stringTwo === true) {
     return 'fizzBuzz';
@@ -88,6 +93,7 @@ function concatThreeAndFive(string, stringTwo) {
     return 'bug!';
   } return wichTrue(string);
 }
+
 function fizzBuzz(array) {
   let result = [];
 
@@ -98,7 +104,6 @@ function fizzBuzz(array) {
   }
   return result;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function arrayCreator(string) {
@@ -143,6 +148,7 @@ function encode(string) {
   }
   return phraseEncoded;
 }
+
 function decoder(string) {
   let codifier = [
     { number: 'a', crypto: '1' }, { number: 'e', crypto: '2' }, { number: 'i', crypto: '3' },
@@ -157,6 +163,7 @@ function decoder(string) {
   }
   return string;
 }
+
 function arrayDecoder(array) {
   let arrayEncoded = [];
 
@@ -165,6 +172,7 @@ function arrayDecoder(array) {
   }
   return arrayEncoded;
 }
+
 function decode(string) {
   let array = arrayCreator(string);
   let arrayDecoded = arrayDecoder(array);
@@ -174,7 +182,6 @@ function decode(string) {
   }
   return phraseDecoded;
 }
-console.log(decode('v1m4 t2st1r'));
 
 // Desafio 10
 function techList(array, string) {
