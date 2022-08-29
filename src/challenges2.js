@@ -32,20 +32,17 @@ function verifyZeroAndNine(array) {
   return true;
 }
 function phoneCreator(array) {
-  let phoneNumber = '';
+  let ddd = `(${array[0].toString()}${array[1].toString()}) `;
+  let phoneNumberPartOne = '';
+  let phoneNumberPartTwo = '';
 
-  for (let index = 0; index < array.length; index += 1) {
-    if (index === 0) {
-      phoneNumber = '(' + array[index].toString();
-    } else if (index === 2) {
-      phoneNumber = phoneNumber + ') ' + array[index].toString();
-    } else if (index === 7) {
-      phoneNumber = phoneNumber + '-' + array[index].toString();
-    } else {
-      phoneNumber += array[index].toString();
-    }
+  for (let index = 2; index < 7; index += 1) {
+    phoneNumberPartOne += array[index].toString();
   }
-  return phoneNumber;
+  for (let i = 7; i < array.length; i += 1) {
+    phoneNumberPartTwo += array[i].toString();
+  }
+  return `${ddd + phoneNumberPartOne}-${phoneNumberPartTwo}`;
 }
 
 function generatePhoneNumber(array) {
