@@ -4,8 +4,48 @@ function generatePhoneNumber() {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function checkSom(valueOne, valueTwo, valueThree) {
+  let sideCheckSom = true;
+
+  switch (true) {
+  case (Math.abs(valueOne) + Math.abs(valueTwo)) < Math.abs(valueThree):
+    sideCheckSom = false;
+    break;
+  case (Math.abs(valueTwo) + Math.abs(valueThree)) < Math.abs(valueOne):
+    sideCheckSom = false;
+    break;
+  case (Math.abs(valueThree) + Math.abs(valueOne)) < Math.abs(valueTwo):
+    sideCheckSom = false;
+    break;
+  default: sideCheckSom = true;
+  }
+  return sideCheckSom;
+}
+function checkMinus(valueOne, valueTwo, valueThree) {
+  let sideCheckMinus = true;
+  switch (true) {
+  case (Math.abs(valueOne) - Math.abs(valueTwo)) > Math.abs(valueThree):
+    sideCheckMinus = false;
+    break;
+  case (Math.abs(valueTwo) - Math.abs(valueThree)) > Math.abs(valueOne):
+    sideCheckMinus = false;
+    break;
+  case (Math.abs(valueThree) - Math.abs(valueOne)) > Math.abs(valueTwo):
+    sideCheckMinus = false;
+    break;
+  default: sideCheckMinus = true;
+  }
+  return sideCheckMinus;
+}
+function triangleCheck(lineA, lineB, lineC) {
+
+  let sideCheckSom = checkSom(lineA, lineB, lineC);
+  let sideCheckMinus = checkMinus(lineA, lineB, lineC);
+
+  if (sideCheckSom && sideCheckMinus === true) {
+    return true;
+  }
+  return false;
 }
 
 // Desafio 13
@@ -21,7 +61,6 @@ function hydrate(string) {
   }
   return `${result} copo de água`;
 }
-console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
 
 module.exports = {
   generatePhoneNumber,
