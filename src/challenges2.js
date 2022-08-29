@@ -38,7 +38,6 @@ function checkMinus(valueOne, valueTwo, valueThree) {
   return sideCheckMinus;
 }
 function triangleCheck(lineA, lineB, lineC) {
-
   let sideCheckSom = checkSom(lineA, lineB, lineC);
   let sideCheckMinus = checkMinus(lineA, lineB, lineC);
 
