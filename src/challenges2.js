@@ -95,7 +95,7 @@ function triangleCheck(lineA, lineB, lineC) {
   let sideCheckSom = checkSom(lineA, lineB, lineC);
   let sideCheckMinus = checkMinus(lineA, lineB, lineC);
 
-  if (sideCheckSom && sideCheckMinus === true) {
+  if (sideCheckSom === true && sideCheckMinus === true) {
     return true;
   }
   return false;
